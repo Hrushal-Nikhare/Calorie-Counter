@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #11171a;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-2xl text-gray-900 font-semibold">Calorie <i class="text-sky-600">Counter</i></span>
+                <div class="flex space-x-4 text-gray-900">
+                    <a href="#">Dashboard</a>
+                    <a href="#">About</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <picture>
+        <source class="w-screen" srcset="Cover.avif" type="image/avif">
+
+        <img class="w-screen" alt="A Fallback image" src="front_Fallback.jpg" />
+        </source>
+    </picture>
+    <div class="w-full text-center">Photo by <a class="text-cyan-600 underline"
+            href="https://unsplash.com/@jimmydean?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jimmy
+            Dean</a> on <a class="text-cyan-600 underline"
+            href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </div>
+    <label for="weight">Weight(g):</label>
+    <input type="number" id="weight" min="0" name="weight" placeholder="Weight" required
+        onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" />
+    <br>
+    <label for="file">Image File:</label>
+    <input type="file" name="file" accept="image/*" id="file" required>
+    <br>
+    <h3>Preview: </h3>
+    <div class="border-dashed border-2 border-sky-500 grid justify-items-center">
+        <p id="status">Default Image Loaded</p>
+        <img class="max-w-prose" alt="Image preview" id="output" src="sample/Ice Cream.jpg">
+    </div>
+    <br><br>
+    <button onclick="API()">Submit</button>
+    <script>
+        let base64String = "";
+        const status = document.getElementById('status');
+        const output = document.getElementById('output');
+        if (window.FileList && window.File && window.FileReader) {
+            document.getElementById('file').addEventListener('change', event => {
+                output.src = '';
+                status.textContent = '';
+                const file = event.target.files[0];
+                if (!file.type) {
+                    status.textContent =
+                        'Error: The File.type property does not appear to be supported on this browser.';
+                    return;
+                }
+                if (!file.type.match('image.*')) {
+                    status.textContent = 'Error: The selected file does not appear to be an image.'
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function () {
+                    base64String = reader.result
+                    // console.log(base64String);
+                }
+                reader.addEventListener('load', event => {
+                    output.src = event.target.result;
+                });
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function API() {
+            const file = document.getElementById('file').files[0];
+            const weight = document.getElementById('weight').value;
+            console.log("Request sent");
+            fetch('https://hf.space/embed/aaronherrera/Calorie_Counter/+/api/predict/', {
+                method: "POST",
+                body: JSON.stringify({
+                    "data": [
+                        base64String,
+                        weight
+                    ]
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(function (response) {
+                return response.json();
+            }).then(function (json_response) {
+                console.log(json_response)
+            })
+        }
+    </script>
+</body>
+
+</html>
