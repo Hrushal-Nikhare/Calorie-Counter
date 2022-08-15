@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #11171a;
+            border-radius: 10px;
+        }
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{  url_for('static',filename='favicons/apple-touch-icon.png')  }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{  url_for('static',filename='favicons/favicon-32x32.png')  }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{  url_for('static',filename='favicons/favicon-16x16.png')  }}">
+    <link rel="manifest" href="{{  url_for('static',filename='favicons/site.webmanifest')  }}">
+    <script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-2xl text-gray-900 font-semibold">Calorie <i class="text-sky-600">Counter</i></span>
+                <div class="flex space-x-4 text-gray-900">
+                    <a href="/">Dashboard</a>
+                    <a href="/#About">About</a>
+                    <a href="/#Contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <picture>
+        <source class="w-screen" srcset="{{ url_for('static',filename='Cover.avif') }}" type="image/avif">
+
+        <img class="w-screen" alt="A Fallback image" src="{{ url_for('static',filename='front_Fallback.jpg') }}" />
+        </source>
+    </picture>
+    <div class="w-full text-center">Photo by <a class="text-cyan-600 underline"
+            href="https://unsplash.com/@jimmydean?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jimmy
+            Dean</a> on <a class="text-cyan-600 underline"
+            href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </div>
+    <form method="post" action="/" enctype="multipart/form-data">
+        <label for="file">Image File:</label>
+        <input type="file" name="file" accept="image/*" id="file" required>
+        <br>
+
+        <h3>Preview: </h3>
+        <div class="border-dashed border-2 border-sky-500 grid justify-items-center">
+            <p id="status">Default Image Loaded</p>
+            <img class="max-w-prose" alt="Image preview" id="output"
+                src="{{ url_for('static',filename='sample/Ice Cream.jpg') }}">
+        </div>
+        <br><br>
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+    <br><br>
+    <div id="About"></div>
+    <div id="Contact"></div>
+    <script>
+        let base64String = "";
+        const status = document.getElementById('status');
+        const output = document.getElementById('output');
+        if (window.FileList && window.File && window.FileReader) {
+            document.getElementById('file').addEventListener('change', event => {
+                output.src = '';
+                status.textContent = '';
+                const file = event.target.files[0];
+                if (!file.type) {
+                    status.textContent =
+                        'Error: The File.type property does not appear to be supported on this browser.';
+                    return;
+                }
+                if (!file.type.match('image.*')) {
+                    status.textContent = 'Error: The selected file does not appear to be an image.'
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function () {
+                    base64String = reader.result
+                    // console.log(base64String);
+                }
+                reader.addEventListener('load', event => {
+                    output.src = event.target.result;
+                });
+                reader.readAsDataURL(file);
+            });
+        }
+
+        $(document).on('click', 'a[href^="#"]', function (e) {
+            // target element id
+            var id = $(this).attr('href');
+
+            // target element
+            var $id = $(id);
+            if ($id.length === 0) {
+                return;
+            }
+
+            // prevent standard hash navigation (avoid blinking in IE)
+            e.preventDefault();
+
+            // top position relative to the document
+            var pos = $id.offset().top;
+
+            // animated top scrolling
+            $('body, html').animate({
+                scrollTop: pos
+            }, 1000);
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{  url_for('static',filename='favicons/apple-touch-icon.png')  }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{  url_for('static',filename='favicons/favicon-32x32.png')  }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{  url_for('static',filename='favicons/favicon-16x16.png')  }}">
+    <link rel="manifest" href="{{  url_for('static',filename='favicons/site.webmanifest')  }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #11171a;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-2xl text-gray-900 font-semibold">Calorie <i class="text-sky-600">Counter</i></span>
+                <div class="flex space-x-4 text-gray-900">
+                    <a href="/">Dashboard</a>
+                    <a href="/#About">About</a>
+                    <a href="/#Contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="w-screen h-screen bg-neutral-900 text-slate-200 text-9xl text-center flex items-center justify-center">
+    
+    404 <br>
+    Page Not Found
+
+</div>
+</body>
+
+</html>
