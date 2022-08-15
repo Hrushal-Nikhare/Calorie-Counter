@@ -4,6 +4,7 @@ import random
 import json
 import cv2
 import numpy as np
+import pandas as pd
 import tensorflow as tf
 from flask import Flask, flash, redirect, render_template, request, url_for
 from tensorflow.keras.models import *
@@ -78,13 +79,19 @@ def not_found(e):
 
 # Run Program
 if __name__ == '__main__':
-	model = tf.keras.models.load_model('model')
-	model.summary()
+	# model = tf.keras.models.load_model('model')
+	# model.summary()
 	with open("images_.p","rb") as file:
 		images_ = pickle.load(file)
 	with open("labels.p","rb") as file:
 		labels = pickle.load(file)
 	with open("dish_dict.p","rb") as file:
 		dish_dict = pickle.load(file)
-
-	app.run(host='127.0.0.1', port=8000, debug=True)
+	with open("data.json","r") as file:
+		nutrition = json.load(file)
+	for item in nutrition:
+		for data_item in item['Food']:
+			if data_item['Food'] == 'sutar_feni':
+				print(data_item['Food'])
+		
+	#app.run(host='127.0.0.1', port=8000, debug=True)

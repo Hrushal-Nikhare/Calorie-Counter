@@ -1,0 +1,634 @@
+[
+    {
+        "Food": "adhirasam",
+        "FATS": "5g",
+        "PROTEIN": "4g",
+        "CARBS": "20g",
+        "CALORIES": 302.0,
+        "index": 1
+    },
+    {
+        "Food": "aloo_gobi",
+        "FATS": "7g",
+        "PROTEIN": "12g",
+        "CARBS": "52g",
+        "CALORIES": 304.0,
+        "index": 2
+    },
+    {
+        "Food": "aloo_matar",
+        "FATS": "1g",
+        "PROTEIN": "7g",
+        "CARBS": "48g",
+        "CALORIES": 219.0,
+        "index": 3
+    },
+    {
+        "Food": "aloo_methi",
+        "FATS": "9g",
+        "PROTEIN": "6g",
+        "CARBS": "29g",
+        "CALORIES": 223.0,
+        "index": 4
+    },
+    {
+        "Food": "aloo_shimla_mirch",
+        "FATS": "6g",
+        "PROTEIN": "3g",
+        "CARBS": "30g",
+        "CALORIES": 180.0,
+        "index": 5
+    },
+    {
+        "Food": "aloo_tikki",
+        "FATS": "24g",
+        "PROTEIN": "20g",
+        "CARBS": "40g",
+        "CALORIES": 60.0,
+        "index": 6
+    },
+    {
+        "Food": "anarsa",
+        "FATS": "23g",
+        "PROTEIN": "1g",
+        "CARBS": "25g",
+        "CALORIES": 304.0,
+        "index": 7
+    },
+    {
+        "Food": "ariselu",
+        "FATS": "8.9g",
+        "PROTEIN": "2g",
+        "CARBS": "45g",
+        "CALORIES": 312.0,
+        "index": 8
+    },
+    {
+        "Food": "basundi",
+        "FATS": "5g",
+        "PROTEIN": "4g",
+        "CARBS": "28g",
+        "CALORIES": 260.0,
+        "index": 9
+    },
+    {
+        "Food": "bhatura",
+        "FATS": "9g",
+        "PROTEIN": "7g",
+        "CARBS": "28g",
+        "CALORIES": 220.0,
+        "index": 10
+    },
+    {
+        "Food": "bhindi_masala",
+        "FATS": "1g",
+        "PROTEIN": "4g",
+        "CARBS": "7g",
+        "CALORIES": 83.0,
+        "index": 11
+    },
+    {
+        "Food": "biryani",
+        "FATS": "12g",
+        "PROTEIN": "11g",
+        "CARBS": "56g",
+        "CALORIES": 365.0,
+        "index": 12
+    },
+    {
+        "Food": "boondi",
+        "FATS": "10g",
+        "PROTEIN": "5g",
+        "CARBS": "12g",
+        "CALORIES": 145.0,
+        "index": 13
+    },
+    {
+        "Food": "butter_chicken",
+        "FATS": "24g",
+        "PROTEIN": "31g",
+        "CARBS": "40g",
+        "CALORIES": 497.0,
+        "index": 14
+    },
+    {
+        "Food": "chak_hao_kheer",
+        "FATS": "2.97g",
+        "PROTEIN": "4.21g",
+        "CARBS": "36.49g",
+        "CALORIES": 181.0,
+        "index": 15
+    },
+    {
+        "Food": "cham_cham",
+        "FATS": "2g",
+        "PROTEIN": "4g",
+        "CARBS": "35g",
+        "CALORIES": 170.0,
+        "index": 16
+    },
+    {
+        "Food": "chana_masala",
+        "FATS": "3g",
+        "PROTEIN": "11g",
+        "CARBS": "55g",
+        "CALORIES": 290.0,
+        "index": 17
+    },
+    {
+        "Food": "chapati",
+        "FATS": "0g",
+        "PROTEIN": "2g",
+        "CARBS": "5g",
+        "CALORIES": 120.0,
+        "index": 18
+    },
+    {
+        "Food": "chena_kheeri",
+        "FATS": "7g",
+        "PROTEIN": "14g",
+        "CARBS": "20g",
+        "CALORIES": 250.0,
+        "index": 19
+    },
+    {
+        "Food": "chicken_razala",
+        "FATS": "20g",
+        "PROTEIN": "19g",
+        "CARBS": "13g",
+        "CALORIES": 308.0,
+        "index": 20
+    },
+    {
+        "Food": "chicken_tikka ",
+        "FATS": "2g",
+        "PROTEIN": "26g",
+        "CARBS": "3g",
+        "CALORIES": 133.0,
+        "index": 21
+    },
+    {
+        "Food": "chicken_tikka_masala",
+        "FATS": "12g",
+        "PROTEIN": "46g",
+        "CARBS": "8g",
+        "CALORIES": 324.0,
+        "index": 22
+    },
+    {
+        "Food": "chikki",
+        "FATS": "40g",
+        "PROTEIN": "24g",
+        "CARBS": "40g",
+        "CALORIES": 620.0,
+        "index": 23
+    },
+    {
+        "Food": "daal_puri ",
+        "FATS": "3g",
+        "PROTEIN": "3g",
+        "CARBS": "16g",
+        "CALORIES": 110.0,
+        "index": 24
+    },
+    {
+        "Food": "dal_baati_churma",
+        "FATS": "5g",
+        "PROTEIN": "4g",
+        "CARBS": "30g",
+        "CALORIES": 320.0,
+        "index": 25
+    },
+    {
+        "Food": "dal_makhani",
+        "FATS": "29g",
+        "PROTEIN": "7g",
+        "CARBS": "17g",
+        "CALORIES": 350.0,
+        "index": 26
+    },
+    {
+        "Food": "dal_tadka",
+        "FATS": "8g",
+        "PROTEIN": "7g",
+        "CARBS": "19g",
+        "CALORIES": 170.0,
+        "index": 27
+    },
+    {
+        "Food": "dharwad_pedha",
+        "FATS": "2g",
+        "PROTEIN": "5g",
+        "CARBS": "10g",
+        "CALORIES": 90.0,
+        "index": 28
+    },
+    {
+        "Food": "doodhpak ",
+        "FATS": "1g",
+        "PROTEIN": "50g",
+        "CARBS": "1g",
+        "CALORIES": 100.0,
+        "index": 29
+    },
+    {
+        "Food": "double_ka_meetha",
+        "FATS": "11g",
+        "PROTEIN": "7g",
+        "CARBS": "54g",
+        "CALORIES": 337.0,
+        "index": 30
+    },
+    {
+        "Food": "dum_aloo",
+        "FATS": "5g",
+        "PROTEIN": "5g",
+        "CARBS": "34g",
+        "CALORIES": 164.0,
+        "index": 31
+    },
+    {
+        "Food": "gajar_ka_halwa",
+        "FATS": "3g",
+        "PROTEIN": "9g",
+        "CARBS": "16g",
+        "CALORIES": 81.0,
+        "index": 32
+    },
+    {
+        "Food": "gavvalu",
+        "FATS": "5g",
+        "PROTEIN": "1g",
+        "CARBS": "0g",
+        "CALORIES": 100.0,
+        "index": 33
+    },
+    {
+        "Food": "ghevar",
+        "FATS": "45g",
+        "PROTEIN": "6g",
+        "CARBS": "75g",
+        "CALORIES": 769.0,
+        "index": 34
+    },
+    {
+        "Food": "gulab_jamun",
+        "FATS": "20g",
+        "PROTEIN": "2g",
+        "CARBS": "17g",
+        "CALORIES": 232.0,
+        "index": 35
+    },
+    {
+        "Food": "imarti",
+        "FATS": "18g",
+        "PROTEIN": "4g",
+        "CARBS": "80g",
+        "CALORIES": 500.0,
+        "index": 36
+    },
+    {
+        "Food": "jalebi",
+        "FATS": "3g",
+        "PROTEIN": "1g",
+        "CARBS": "72g",
+        "CALORIES": 354.0,
+        "index": 37
+    },
+    {
+        "Food": "kachori",
+        "FATS": "23g",
+        "PROTEIN": "0g",
+        "CARBS": "52g",
+        "CALORIES": 466.0,
+        "index": 38
+    },
+    {
+        "Food": "kadai_paneer",
+        "FATS": "36g",
+        "PROTEIN": "19g",
+        "CARBS": "26g",
+        "CALORIES": 458.0,
+        "index": 39
+    },
+    {
+        "Food": "kadhi_pakoda",
+        "FATS": "4g",
+        "PROTEIN": "8g",
+        "CARBS": "14g",
+        "CALORIES": 178.0,
+        "index": 40
+    },
+    {
+        "Food": "kajjikaya",
+        "FATS": "5g",
+        "PROTEIN": "2g",
+        "CARBS": "4g",
+        "CALORIES": 78.0,
+        "index": 41
+    },
+    {
+        "Food": "kakinada_khaja",
+        "FATS": "79g",
+        "PROTEIN": "5g",
+        "CARBS": "80g",
+        "CALORIES": 130.0,
+        "index": 42
+    },
+    {
+        "Food": "kalakand",
+        "FATS": "6g",
+        "PROTEIN": "5g",
+        "CARBS": "17g",
+        "CALORIES": 142.0,
+        "index": 43
+    },
+    {
+        "Food": "karela_bharta",
+        "FATS": "6g",
+        "PROTEIN": "2g",
+        "CARBS": "17g",
+        "CALORIES": 117.0,
+        "index": 44
+    },
+    {
+        "Food": "kofta",
+        "FATS": "17g",
+        "PROTEIN": "79g",
+        "CARBS": "12g",
+        "CALORIES": 524.0,
+        "index": 45
+    },
+    {
+        "Food": "kuzhi_paniyaram",
+        "FATS": "14g",
+        "PROTEIN": "5g",
+        "CARBS": "42g",
+        "CALORIES": 272.0,
+        "index": 46
+    },
+    {
+        "Food": "lassi",
+        "FATS": "3g",
+        "PROTEIN": "5g",
+        "CARBS": "25g",
+        "CALORIES": 154.0,
+        "index": 47
+    },
+    {
+        "Food": "ledikeni",
+        "FATS": "1g",
+        "PROTEIN": "50g",
+        "CARBS": "1g",
+        "CALORIES": 100.0,
+        "index": 48
+    },
+    {
+        "Food": "litti_chokha",
+        "FATS": "3g",
+        "PROTEIN": "5g",
+        "CARBS": "25g",
+        "CALORIES": 144.0,
+        "index": 49
+    },
+    {
+        "Food": "lyangcha",
+        "FATS": "1g",
+        "PROTEIN": "50g",
+        "CARBS": "1g",
+        "CALORIES": 100.0,
+        "index": 50
+    },
+    {
+        "Food": "maach_jhol",
+        "FATS": "9g",
+        "PROTEIN": "6g",
+        "CARBS": "14g",
+        "CALORIES": 163.0,
+        "index": 51
+    },
+    {
+        "Food": "makki_di_roti_sarson_da_saag",
+        "FATS": "7g",
+        "PROTEIN": "4g",
+        "CARBS": "5g",
+        "CALORIES": 70.0,
+        "index": 52
+    },
+    {
+        "Food": "malapua",
+        "FATS": "7g",
+        "PROTEIN": "1g",
+        "CARBS": "23g",
+        "CALORIES": 151.0,
+        "index": 53
+    },
+    {
+        "Food": "misi_roti",
+        "FATS": "6g",
+        "PROTEIN": "8g",
+        "CARBS": "57g",
+        "CALORIES": 203.0,
+        "index": 54
+    },
+    {
+        "Food": "misti_doi",
+        "FATS": "6g",
+        "PROTEIN": "4g",
+        "CARBS": "27g",
+        "CALORIES": 179.0,
+        "index": 55
+    },
+    {
+        "Food": "modak",
+        "FATS": "6g",
+        "PROTEIN": "2g",
+        "CARBS": "32g",
+        "CALORIES": 187.0,
+        "index": 56
+    },
+    {
+        "Food": "mysore_pak",
+        "FATS": "51g",
+        "PROTEIN": "4g",
+        "CARBS": "41g",
+        "CALORIES": 574.0,
+        "index": 57
+    },
+    {
+        "Food": "naan",
+        "FATS": "3g",
+        "PROTEIN": "5g",
+        "CARBS": "48g",
+        "CALORIES": 250.0,
+        "index": 58
+    },
+    {
+        "Food": "navrattan_korma",
+        "FATS": "7.1g",
+        "PROTEIN": "4.3g",
+        "CARBS": "12.9g",
+        "CALORIES": 135.7,
+        "index": 59
+    },
+    {
+        "Food": "palak_paneer",
+        "FATS": "7g",
+        "PROTEIN": "10g",
+        "CARBS": "10g",
+        "CALORIES": 97.0,
+        "index": 60
+    },
+    {
+        "Food": "paneer_butter_masala",
+        "FATS": "1g",
+        "PROTEIN": "1g",
+        "CARBS": "3g",
+        "CALORIES": 20.0,
+        "index": 61
+    },
+    {
+        "Food": "phirni",
+        "FATS": "5g",
+        "PROTEIN": "8g",
+        "CARBS": "25g",
+        "CALORIES": 126.0,
+        "index": 62
+    },
+    {
+        "Food": "pithe",
+        "FATS": "3g",
+        "PROTEIN": "5g",
+        "CARBS": "45g",
+        "CALORIES": 226.0,
+        "index": 63
+    },
+    {
+        "Food": "poha",
+        "FATS": "6g",
+        "PROTEIN": "7g",
+        "CARBS": "69g",
+        "CALORIES": 330.0,
+        "index": 64
+    },
+    {
+        "Food": "poornalu",
+        "FATS": "1g",
+        "PROTEIN": "50g",
+        "CARBS": "1g",
+        "CALORIES": 100.0,
+        "index": 65
+    },
+    {
+        "Food": "pootharekulu",
+        "FATS": "4g",
+        "PROTEIN": "2g",
+        "CARBS": "31g",
+        "CALORIES": 158.0,
+        "index": 66
+    },
+    {
+        "Food": "qubani_ka_meetha",
+        "FATS": "1g",
+        "PROTEIN": "50g",
+        "CARBS": "1g",
+        "CALORIES": 100.0,
+        "index": 67
+    },
+    {
+        "Food": "rabri",
+        "FATS": "18g",
+        "PROTEIN": "4g",
+        "CARBS": "56g",
+        "CALORIES": 410.0,
+        "index": 68
+    },
+    {
+        "Food": "ras_malai",
+        "FATS": "8g",
+        "PROTEIN": "10g",
+        "CARBS": "19g",
+        "CALORIES": 184.0,
+        "index": 69
+    },
+    {
+        "Food": "rasgulla",
+        "FATS": "2g",
+        "PROTEIN": "2g",
+        "CARBS": "25g",
+        "CALORIES": 120.0,
+        "index": 70
+    },
+    {
+        "Food": "sandesh",
+        "FATS": "11 g",
+        "PROTEIN": "5g",
+        "CARBS": "26g",
+        "CALORIES": 220.0,
+        "index": 71
+    },
+    {
+        "Food": "shakarpali",
+        "FATS": "25g",
+        "PROTEIN": "4g",
+        "CARBS": "55g",
+        "CALORIES": 230.0,
+        "index": 72
+    },
+    {
+        "Food": "sheer_korma",
+        "FATS": "10g",
+        "PROTEIN": "50g",
+        "CARBS": "40g",
+        "CALORIES": 100.0,
+        "index": 73
+    },
+    {
+        "Food": "sheera",
+        "FATS": "13g",
+        "PROTEIN": "5g",
+        "CARBS": "46 g",
+        "CALORIES": 314.0,
+        "index": 74
+    },
+    {
+        "Food": "shrikhand",
+        "FATS": "5g",
+        "PROTEIN": "5g",
+        "CARBS": "42g",
+        "CALORIES": 234.0,
+        "index": 75
+    },
+    {
+        "Food": "sohan_halwa",
+        "FATS": "39g",
+        "PROTEIN": "1g",
+        "CARBS": "19g",
+        "CALORIES": 103.0,
+        "index": 76
+    },
+    {
+        "Food": "sohan_papdi",
+        "FATS": "15g",
+        "PROTEIN": "35g",
+        "CARBS": "35 g",
+        "CALORIES": 281.0,
+        "index": 77
+    },
+    {
+        "Food": "sutar_feni",
+        "FATS": "11 g",
+        "PROTEIN": "6g",
+        "CARBS": "66g",
+        "CALORIES": 394.0,
+        "index": 78
+    },
+    {
+        "Food": "unni_appam",
+        "FATS": "1g",
+        "PROTEIN": "1g",
+        "CARBS": "13g",
+        "CALORIES": 71.0,
+        "index": 79
+    }
+]
