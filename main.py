@@ -1,7 +1,7 @@
 # Imports
 import os
 import random
-
+import json
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -9,6 +9,7 @@ from flask import Flask, flash, redirect, render_template, request, url_for
 from tensorflow.keras.models import *
 from tensorflow.keras.models import Model
 from werkzeug.utils import secure_filename
+import pickle
 
 # Variables
 UPLOAD_FOLDER = 'C:\\Users\\hrush\\OneDrive\\Desktop\\Programs\\School\\Food Calorie Finder\\Draft 3\\static\\uploads'
@@ -22,44 +23,6 @@ food_names = ['sutar_feni', 'sheera', 'sohan_papdi', 'sandesh', 'sohan_halwa', '
 # Functions
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-def loadimgs(names):
-	'''
-	path => Path of train directory or test directory
-	'''
-	images = []
-	labels = [] 
-
-	img_shape = (200,200)
-	dish_dict = {}
-
-	path = "C:\\Users\\hrush\\Downloads\\archive\\Indian Food Images\\Indian Food Images"
-
-	category_images = []
-
-	for clsctr, dish in enumerate(names):
-		dish_dict[dish] = clsctr
-		dish_path = f'{os.path.join(path, dish)}/'
-
-		for count, filename in enumerate(os.listdir(dish_path)):
-						#print("Class :{}, count: {}".format(clsctr,count))
-			if count == 1:
-				#print("In train condition")
-				image_path = os.path.join(dish_path, filename)
-				image = cv2.imread(image_path)
-				resized_image = cv2.resize(image, img_shape)
-				final_image = resized_image #cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)
-				labels.append(clsctr)
-				try:
-					category_images.append(final_image)
-
-				except ValueError as e:
-					print(e)
-					print("error - category_images_train:", final_image)
-	images = category_images
-
-	return images, labels, dish_dict
-
 
 def create_pairs_for_pred(image_path, images_):
 	# initialize two empty lists to hold the (image, image) pairs and
@@ -98,10 +61,9 @@ def upload_form():
 			pairPred = create_pairs_for_pred(image_path, images_)
 			image_prediction = model.predict( [pairPred[:,0],pairPred[:,1]])
 			prediction = list(dish_dict.keys())[list(dish_dict.values()).index(np.argmax(image_prediction))]
-			print(f"The image is of {list(dish_dict.keys())[list(dish_dict.values()).index(np.argmax(image_prediction))]}")
-			#print('upload_image filename: ' + filename)
-			flash('Image successfully uploaded and displayed below')
-			return render_template('result.html', file=filename , prediction=prediction)
+			print(f"The image ({image_path}) is of {list(dish_dict.keys())[list(dish_dict.values()).index(np.argmax(image_prediction))]}")
+			print('upload_image filename: ' + filename)
+			return render_template('result.html', file=filename , prediction=prediction,calories=None,protein=None,fat=None,carbs=None,fact=None)
 		else:
 			flash('Allowed image types are -> png, jpg, jpeg, gif')
 			return redirect(request.url)
@@ -119,6 +81,11 @@ def not_found(e):
 if __name__ == '__main__':
 	model = tf.keras.models.load_model('C:\\Users\\hrush\\OneDrive\\Desktop\\Programs\\School\\Food Calorie Finder\\Draft 3\\model')
 	model.summary()
-	images_, labels , dish_dict = loadimgs(food_names) 
+	with open("images_.p","rb") as file:
+		images_ = pickle.load(file)
+	with open("labels.p","rb") as file:
+		labels = pickle.load(file)
+	with open("dish_dict.p","rb") as file:
+		dish_dict = pickle.load(file)
 
 	app.run(host='127.0.0.1', port=8000, debug=True)

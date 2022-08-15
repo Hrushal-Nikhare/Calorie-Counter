@@ -36,52 +36,59 @@
 </head>
 
 <body>
-    <nav class="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <span class="text-2xl text-gray-900 font-semibold">Calorie <i class="text-sky-600">Counter</i></span>
-                <div class="flex space-x-4 text-gray-900">
-                    <a href="/">Dashboard</a>
-                    <a href="/#About">About</a>
-                    <a href="/#Contact">Contact</a>
+        <nav class="sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <span class="text-2xl text-gray-900 font-semibold">Calorie <i
+                            class="text-sky-600">Counter</i></span>
+                    <div class="flex space-x-4 text-gray-900">
+                        <a href="/">Dashboard</a>
+                        <a href="/#About">About</a>
+                        <a href="/#Contact">Contact</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-    <div class="border-dashed border-2 border-sky-500 grid justify-items-center">
+        </nav>
+    <div class="grid justify-items-center text-5xl">
         <p>Uploaded Image:</p>
         <picture>
-            <source class="w-screen" srcset="{{ url_for('display_image', filename=file) }}" type="image/avif">
+            <source class="w-screen border-dashed border-2 border-sky-500 " srcset="{{ url_for('display_image', filename=file) }}" type="image/avif">
 
-            <img class="w-screen" alt="A Fallback image" src="{{ url_for('display_image', filename=file) }}" />
+            <img class="w-screen border-dashed border-2 border-sky-500" alt="A Fallback image"
+                src="{{ url_for('display_image', filename=file) }}" />
             </source>
         </picture>
+
+        <br><br><br>
         <h1>Picture is of {{ prediction }}</h1>
         <h3>Nutritional Information</h3>
+        <p>Calories: {{ calories }}</p>
+        <p>Protein: {{ protein }}</p>
+        <p>Fat: {{ fat }}</p>
+        <p>Carbohydrates: {{ carbs }}</p>
+        <p>Fun Fact : {{ fact }}</p>
     </div>
-    <script>
-        $(document).on('click', 'a[href^="#"]', function (e) {
-            // target element id
-            var id = $(this).attr('href');
+<script>
+    $(document).on('click', 'a[href^="#"]', function(e) {
+    // target element id
+    var id = $(this).attr('href');
 
-            // target element
-            var $id = $(id);
-            if ($id.length === 0) {
-                return;
-            }
+    // target element
+    var $id = $(id);
+    if ($id.length === 0) {
+    return;
+    }
 
-            // prevent standard hash navigation (avoid blinking in IE)
-            e.preventDefault();
+    // prevent standard hash navigation (avoid blinking in IE)
+    e.preventDefault();
 
-            // top position relative to the document
-            var pos = $id.offset().top;
+    // top position relative to the document
+    var pos = $id.offset().top;
 
-            // animated top scrolling
-            $('body, html').animate({
-                scrollTop: pos
-            }, 1000);
-        });
-    </script>
+    // animated top scrolling
+    $('body, html').animate({scrollTop: pos},1000);
+    });
+</script>
 </body>
 
 </html>
