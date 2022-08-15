@@ -23,7 +23,7 @@ food_names = ['sutar_feni', 'sheera', 'sohan_papdi', 'sandesh', 'sohan_halwa', '
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def loadimgs_(names):
+def loadimgs(names):
 	'''
 	path => Path of train directory or test directory
 	'''
@@ -94,10 +94,14 @@ def upload_form():
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-			print(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+			pairPred = create_pairs_for_pred(image_path, images_)
+			image_prediction = model.predict( [pairPred[:,0],pairPred[:,1]])
+			prediction = list(dish_dict.keys())[list(dish_dict.values()).index(np.argmax(image_prediction))]
+			print(f"The image is of {list(dish_dict.keys())[list(dish_dict.values()).index(np.argmax(image_prediction))]}")
 			#print('upload_image filename: ' + filename)
 			flash('Image successfully uploaded and displayed below')
-			return render_template('result.html', file=filename)
+			return render_template('result.html', file=filename , prediction=prediction)
 		else:
 			flash('Allowed image types are -> png, jpg, jpeg, gif')
 			return redirect(request.url)
@@ -113,11 +117,8 @@ def not_found(e):
 
 # Run Program
 if __name__ == '__main__':
-	# model = tf.keras.models.load_model('C:\\Users\\hrush\\OneDrive\\Desktop\\Programs\\School\\Food Calorie Finder\\Draft 3\\model')
-	# model.summary()
-	# image_path ="C:\\Users\\hrush\\Downloads\\archive\\Indian Food Images\\Indian Food Images\\gajar_ka_halwa\\0b936843f0.jpg"
-	# images_, labels_ , dish_dict_ = loadimgs_(food_names) 
-	# pairPred = create_pairs_for_pred(image_path, images_)
-	# image_prediction = model.predict( [pairPred[:,0],pairPred[:,1]])
-	# print(f"The image is of {list(dish_dict.keys())[list(dish_dict.values()).index(np.argmax(image_prediction))]}")
+	model = tf.keras.models.load_model('C:\\Users\\hrush\\OneDrive\\Desktop\\Programs\\School\\Food Calorie Finder\\Draft 3\\model')
+	model.summary()
+	images_, labels , dish_dict = loadimgs(food_names) 
+
 	app.run(host='127.0.0.1', port=8000, debug=True)
