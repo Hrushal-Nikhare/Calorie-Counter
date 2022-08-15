@@ -12,12 +12,11 @@ from werkzeug.utils import secure_filename
 import pickle
 
 # Variables
-UPLOAD_FOLDER = 'C:\\Users\\hrush\\OneDrive\\Desktop\\Programs\\School\\Food Calorie Finder\\Draft 3\\static\\uploads'
+UPLOAD_FOLDER = 'static\\uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'df0331cefc6c2b9a5d0208a726a5d1c0fd37324feba25506' # secret key for session
-model_path = 'C:\\Users\\hrush\\OneDrive\\Desktop\\Programs\\School\\Food Calorie Finder\\Draft 3\\static\\model.h5'
 food_names = ['sutar_feni', 'sheera', 'sohan_papdi', 'sandesh', 'sohan_halwa', 'shrikhand', 'shankarpali', 'sheer_korma', 'unni_appam', 'ras_malai', 'pithe', 'paneer_butter_masala', 'pootharekulu', 'poornalu', 'rasgulla', 'rabri', 'poha', 'phirni', 'palak_paneer', 'qubani_ka_meetha', 'malapua', 'maach_jhol', 'navrattan_korma', 'modak', 'naan', 'misti_doi', 'lyangcha', 'makki_di_roti_sarson_da_saag', 'mysore_pak', 'misi_roti', 'kalakand', 'kadhi_pakoda', 'lassi', 'karela_bharta', 'kakinada_khaja', 'kajjikaya', 'kofta', 'ledikeni', 'litti_chokha', 'kuzhi_paniyaram', 'ghevar', 'imarti', 'dum_aloo', 'gulab_jamun', 'double_ka_meetha', 'kadai_paneer', 'kachori', 'gajar_ka_halwa', 'jalebi', 'gavvalu', 'doodhpak', 'chicken_tikka_masala', 'chicken_tikka', 'daal_puri', 'dal_makhani', 'chikki', 'daal_baati_churma', 'dharwad_pedha', 'chicken_razala', 'dal_tadka', 'chapati', 'chana_masala', 'boondi', 'bhatura', 'biryani', 'chhena_kheeri', 'butter_chicken', 'bhindi_masala', 'chak_hao_kheer', 'cham_cham', 'bandar_laddu', 'ariselu', 'aloo_gobi', 'aloo_tikki', 'aloo_shimla_mirch', 'anarsa', 'adhirasam', 'basundi', 'aloo_matar', 'aloo_methi']
 
 # Functions
@@ -79,7 +78,7 @@ def not_found(e):
 
 # Run Program
 if __name__ == '__main__':
-	model = tf.keras.models.load_model('C:\\Users\\hrush\\OneDrive\\Desktop\\Programs\\School\\Food Calorie Finder\\Draft 3\\model')
+	model = tf.keras.models.load_model('model')
 	model.summary()
 	with open("images_.p","rb") as file:
 		images_ = pickle.load(file)
