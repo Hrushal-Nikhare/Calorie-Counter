@@ -52,8 +52,7 @@
     <div class="grid justify-items-center">
         <p>Uploaded Image:</p>
         <picture>
-            <source class="w-screen border-dashed border-2 border-sky-500 " srcset="{{ url_for('display_image', filename=file) }}" type="image/avif">
-
+            <source class="w-screen border-dashed border-2 border-sky-500 " srcset="{{ url_for('display_image', filename=file) }}">
             <img class="w-screen border-dashed border-2 border-sky-500" alt="A Fallback image"
                 src="{{ url_for('display_image', filename=file) }}" />
             </source>
