@@ -73,8 +73,34 @@
         <button type="submit" value="Submit">Submit</button>
     </form>
     <br><br>
-    <div id="About"></div>
-    <div id="Contact"></div>
+    <br><br><br>
+    <div id="About" class="grid justify-items-center text-2xl">
+        <h3 class="text-3xl">About:</h3>
+        <h3>Made by Hrushal Nikhare(Code), Nysaa Bakshi(PPT) with help From Deepti V(Teacher) all from <a href="https://thekalyanischool.com/">The Kalyani School</a> For The Shree Sabrang Coding Contest</h3>
+    </div>
+    <br><br>
+    <div id="Contact" class="grid justify-items-center text-2xl">
+        <h3 class="text-3xl">Contact:</h3>
+        <a href="mailto:hrushalnikhare@gmail.com" class="text-cyan-600 underline">Contact (Hrushal Nikhare)</a>
+        <a href="mailto:nysaabakshi@gmail.com" class="text-cyan-600 underline">Contact (Nysaa Bakshi)</a>
+        <a href="mailto:deepti.vaidya@thekalyanischool.com" class="text-cyan-600 underline">Contact (Deepti Ma'am)</a>
+    </div>
+    <br><br>
+    <footer class="p-4 bg-white shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://hrushal-nikhare.vercel.app" class="hover:underline">Hrushal Nikhare</a>. All Rights Reserved.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#About" class="mr-4 hover:underline md:mr-6 text-cyan-600 underline">About</a>
+            </li>
+            <li>
+                <a href="https://github.com/Hrushal-Nikhare/Calorie-Counter/blob/main/LICENSE" class=" text-cyan-600 underline mr-4 hover:underline md:mr-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#Contact" class="hover:underline text-cyan-600 underline">Contact</a>
+            </li>
+        </ul>
+    </footer>
     <script>
         let base64String = "";
         const status = document.getElementById('status');

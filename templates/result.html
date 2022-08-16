@@ -49,7 +49,7 @@
                 </div>
             </div>
         </nav>
-    <div class="grid justify-items-center text-5xl">
+    <div class="grid justify-items-center">
         <p>Uploaded Image:</p>
         <picture>
             <source class="w-screen border-dashed border-2 border-sky-500 " srcset="{{ url_for('display_image', filename=file) }}" type="image/avif">
@@ -60,13 +60,14 @@
         </picture>
 
         <br><br><br>
-        <h1>Picture is of {{ prediction }}</h1>
-        <h3>Nutritional Information</h3>
-        <p>Calories: {{ calories }}</p>
-        <p>Protein: {{ protein }}</p>
-        <p>Fat: {{ fat }}</p>
-        <p>Carbohydrates: {{ carbs }}</p>
-        <p>Fun Fact : {{ fact }}</p>
+        <h1 class="text-4xl">Picture is of {{ prediction }}</h1>
+        <br>
+        <h3 class="text-3xl">Nutritional Information:</h3>
+        <br>
+        <p class="text-lg">Calories: {{ calories }}</p>
+        <p class="text-lg">Protein: {{ protein }}</p>
+        <p class="text-lg">Fat: {{ fat }}</p>
+        <p class="text-lg">Carbohydrates: {{ carbs }}</p>
     </div>
 <script>
     $(document).on('click', 'a[href^="#"]', function(e) {
