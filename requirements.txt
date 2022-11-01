@@ -45,3 +45,4 @@ typing_extensions==4.3.0
 urllib3==1.26.11
 Werkzeug==2.2.2
 wrapt==1.14.1
+wheel>=0.38.0 # not directly required, pinned by Snyk to avoid a vulnerability
