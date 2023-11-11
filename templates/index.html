@@ -58,17 +58,21 @@
             Dean</a> on <a class="text-cyan-600 underline"
             href="https://unsplash.com/s/photos/food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
     </div>
-    <form method="post" action="/" enctype="multipart/form-data">
+    <form method="post" class="m-2" action="/" enctype="multipart/form-data">
         <label for="file">Image File:</label>
         <input type="file" name="file" accept="image/*" id="file" required>
+
+        <br>
         <br>
 
-        <h3>Preview: </h3>
-        <div class="border-dashed border-2 border-sky-500 grid justify-items-center">
+        <h3 class="">Preview: </h3>
+        <div class="grid justify-items-center m-8">
+        <div class="border-dashed border-2 border-sky-500 p-8">
             <p id="status">Default Image Loaded</p>
             <img class="max-w-prose" alt="Image preview" id="output"
                 src="{{ url_for('static',filename='sample/Ice Cream.jpg') }}">
         </div>
+    </div>
         <br><br>
         <button type="submit" value="Submit">Submit</button>
     </form>
@@ -76,7 +80,7 @@
     <br><br><br>
     <div id="About" class="grid justify-items-center text-2xl">
         <h3 class="text-3xl">About:</h3>
-        <h3>Made by Hrushal Nikhare(Code), Nysaa Bakshi(PPT) with help From Deepti V(Teacher) all from <a href="https://thekalyanischool.com/">The Kalyani School</a> For The Shree Sabrang Coding Contest</h3>
+        <h3>Made by Hrushal Nikhare(Code), Nysaa Bakshi(PPT) with help From Deepti V(Teacher) all from <a href="https://thekalyanischool.com/" class="underline text-cyan-600">The Kalyani School</a></h3>
     </div>
     <br><br>
     <div id="Contact" class="grid justify-items-center text-2xl">
